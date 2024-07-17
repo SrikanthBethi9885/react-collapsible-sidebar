@@ -1,26 +1,39 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 
-function App() {
+const Home: React.FC = () => <div>Welcome to Home Page</div>;
+const Settings: React.FC = () => <div>Welcome to Settings Page</div>;
+const Locations: React.FC = () => <div>Welcome to Locations Page</div>;
+const Sales: React.FC = () => <div>Welcome to Sales Page</div>;
+const Revenue: React.FC = () => <div>Welcome to Revenue Page</div>;
+const Services: React.FC = () => <div>Welcome to Services Page</div>;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <div style={{ display: 'flex', flexGrow: 1 }}>
+          <Sidebar />
+          <div style={{ padding: '10px', flexGrow: 1, marginTop: '-30px', marginLeft: '-10px' }}>
+            <Header />
+            <div style={{ justifyContent: 'center', textAlign: 'center' }}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/locations" element={<Locations />} />
+                <Route path='/sales' element={<Sales />} />
+                <Route path='/revenue' element={<Revenue />} />
+                <Route path='/services' element={<Services />} />
+              </Routes>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
