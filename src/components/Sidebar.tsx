@@ -16,6 +16,7 @@ const Sidebar: React.FC = () => {
     const location = useLocation();
     const handleToggle = () => {
         setCollapsed(!collapsed);
+        setTimeout
     };
     return (
         <div style={{
@@ -37,7 +38,7 @@ const Sidebar: React.FC = () => {
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     {!collapsed && (
                         <ListItem component={Link} to="/" style={{ display: 'inline-block' }}>
-                            <Typography style={{ fontSize: '16px', color: 'white' }}>G3 Innovations</Typography>
+                            <Typography style={{ fontSize: '16px', color: 'white' }}>Your Logo</Typography>
                         </ListItem>
                     )}
                     <IconButton onClick={handleToggle} style={{ color: 'white', marginRight: '10px' }}>
