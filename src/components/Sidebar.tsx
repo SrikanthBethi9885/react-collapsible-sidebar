@@ -16,7 +16,6 @@ const Sidebar: React.FC = () => {
     const location = useLocation();
     const handleToggle = () => {
         setCollapsed(!collapsed);
-        setTimeout
     };
     return (
         <div style={{
